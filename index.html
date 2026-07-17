@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore how AI may change the tasks in any career.">
+  <title>FutureProof — AI Career Risk Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="FutureProof home"><span class="brand-mark">F</span> FutureProof</a>
+    <nav aria-label="Main navigation"><a href="#analyzer">Analyzer</a><a href="#method">How it works</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow"><span></span> Career intelligence for an AI-powered future</div>
+      <h1>Will AI change<br><em>your dream job?</em></h1>
+      <p>Explore which parts of a career AI may transform—and which human skills will become even more valuable.</p>
+      <a class="button primary" href="#analyzer">Analyze a career <span>→</span></a>
+      <div class="hero-stats" aria-label="Tool highlights">
+        <div><strong>22</strong><small>factors analyzed</small></div>
+        <div><strong>Any</strong><small>career or role</small></div>
+        <div><strong>Clear</strong><small>task-level results</small></div>
+      </div>
+    </section>
+
+    <section class="analyzer-section" id="analyzer">
+      <div class="section-heading">
+        <span class="kicker">Career analyzer</span>
+        <h2>See where humans still have the edge.</h2>
+        <p>Enter a job title. For a more accurate result, describe what the person actually does day to day.</p>
+      </div>
+
+      <div class="analyzer-card">
+        <form id="risk-form">
+          <label for="job-title">Job title</label>
+          <div class="input-wrap"><span aria-hidden="true">⌕</span><input id="job-title" name="job" type="text" placeholder="e.g., Financial analyst, nurse, architect…" autocomplete="off" required></div>
+          <div class="suggestions" aria-label="Example careers">
+            <span>Try:</span><button type="button" data-job="Software developer">Software developer</button><button type="button" data-job="Registered nurse">Registered nurse</button><button type="button" data-job="Electrician">Electrician</button><button type="button" data-job="Marketing manager">Marketing manager</button>
+          </div>
+          <label for="job-description">Main tasks <span class="optional">Optional, but recommended</span></label>
+          <textarea id="job-description" name="description" rows="4" placeholder="Example: Reviews financial reports, builds forecasts, presents recommendations to clients, and works with leadership…"></textarea>
+          <button class="button primary submit" type="submit">Calculate AI impact <span>→</span></button>
+        </form>
+
+        <div id="results" class="results" hidden aria-live="polite">
+          <div class="result-top">
+            <div><span class="kicker">Analysis for</span><h3 id="result-title"></h3><span id="confidence" class="confidence"></span></div>
+            <div class="score-ring" id="score-ring"><div><strong id="risk-score">0</strong><span>/ 100</span></div></div>
+          </div>
+          <div class="risk-label" id="risk-label"></div>
+          <p class="summary" id="result-summary"></p>
+          <div class="balance-bar" aria-label="AI and human task balance"><div id="ai-bar"><span id="ai-percent"></span></div></div>
+          <div class="balance-labels"><span>More AI-suited tasks</span><span>More human-led tasks</span></div>
+          <div class="factor-grid">
+            <section><h4><span class="dot ai"></span> AI leverage</h4><div id="ai-factors"></div></section>
+            <section><h4><span class="dot human"></span> Human advantage</h4><div id="human-factors"></div></section>
+          </div>
+          <div class="actions"><button id="reset-button" class="button secondary" type="button">Analyze another career</button></div>
+          <p class="disclaimer">This educational estimate analyzes tasks, not whether a whole occupation will disappear. Results are not career or financial advice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="method" id="method">
+      <div><span class="kicker">Our approach</span><h2>A job is more than a title.</h2></div>
+      <p>FutureProof compares the language in a role with 11 capabilities where AI is strong and 11 where people are strong. The result shows likely task exposure—not a prediction that the job will vanish.</p>
+      <div class="method-cards">
+        <article><span>01</span><h3>Describe the work</h3><p>Add the actual responsibilities for a result tailored to the role.</p></article>
+        <article><span>02</span><h3>Compare 22 factors</h3><p>We evaluate routine digital work alongside judgment, trust, leadership, and physical work.</p></article>
+        <article><span>03</span><h3>Plan your advantage</h3><p>Use the human-strength results to identify skills worth developing.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-mark">F</span> FutureProof</a><p>Built to start better conversations about work and AI.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
